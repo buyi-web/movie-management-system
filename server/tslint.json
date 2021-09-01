@@ -6,7 +6,8 @@
     "jsRules": {},
     "rules": {
         "no-empty": true,
-        "interface-name": true
+        "interface-name": true,
+        "no-console": false
     },
     "rulesDirectory": []
 }

@@ -1,19 +1,16 @@
 import 'reflect-metadata'
-import { Movie } from "./entities/Movie";
-import { validate } from "class-validator";
-import { plainToClass } from 'class-transformer'
+import { MovieModel } from "./db";
+import { Movie } from './entities/Movie';
+import { MovieService } from './services/MovieService';
 
-const m: any = {};
-m.name = 333
-m.duration = 6000
-m.areas = ['成都', '上海']
-m.types = ['科幻']
+const m: any = {
+    name: 'xxx',
+    types: ['科幻'],
+    duration: 6000,
+    areas: ['成都'],
+}
 
-const movie = plainToClass(Movie, m)
-console.log(movie);
-
-validate(movie).then(res => {
+MovieService.addMovie(m).then(res => {
     console.log(res);
-    
 })
 
